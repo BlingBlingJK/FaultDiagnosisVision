@@ -46,10 +46,10 @@ export default {
       const ret = await axios.get(
         "http://localhost:8999/static/map/china.json"
       );
-      this.$echarts.registerMap("china", ret.data);
+      this.$echarts.registerMap("china", ret.data); //注册map数据
       const initOption = {
         title: {
-          text: "▎ 商家分布",
+          text: "▎ 客户分布",
           left: 20,
           top: 20,
         },
@@ -61,6 +61,9 @@ export default {
           itemStyle: {
             areaColor: "#2E72BF",
             borderColor: "#333",
+          },
+          label: {
+            show: true,
           },
         },
         legend: {
@@ -86,6 +89,9 @@ export default {
         const changeOption = {
           geo: {
             map: provinceInfo.key,
+            label: {
+              show: true,
+            },
           },
         };
         this.chartInstance.setOption(changeOption);

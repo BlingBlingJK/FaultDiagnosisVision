@@ -5,7 +5,7 @@
         <img :src="headerSrc" alt="" />
       </div>
 
-      <span class="title">电商平台实时监控系统</span>
+      <span class="title">高速列车故障诊断数据可视化平台</span>
       <div class="title-right">
         <img :src="themeSrc" class="qiehuan" @click="handleChangeTheme" />
         <span class="datetime"
@@ -28,25 +28,6 @@
     <div class="screen-body">
       <section class="screen-left">
         <div
-          id="left-top"
-          :class="[fullScreenStatus.trend ? 'fullscreen' : '']"
-        >
-          <!-- 销量趋势图表 -->
-          <TrendView ref="trend"></TrendView>
-          <div class="resize">
-            <!-- icon-compress-alt -->
-            <span
-              @click="changeSize('trend')"
-              :class="[
-                'iconfont',
-                fullScreenStatus.trend
-                  ? 'icon-compress-alt'
-                  : 'icon-expand-alt',
-              ]"
-            ></span>
-          </div>
-        </div>
-        <div
           id="left-bottom"
           :class="[fullScreenStatus.seller ? 'fullscreen' : '']"
         >
@@ -59,6 +40,25 @@
               :class="[
                 'iconfont',
                 fullScreenStatus.seller
+                  ? 'icon-compress-alt'
+                  : 'icon-expand-alt',
+              ]"
+            ></span>
+          </div>
+        </div>
+        <div
+          id="left-top"
+          :class="[fullScreenStatus.trend ? 'fullscreen' : '']"
+        >
+          <!-- 销量趋势图表 -->
+          <TrendView ref="trend"></TrendView>
+          <div class="resize">
+            <!-- icon-compress-alt -->
+            <span
+              @click="changeSize('trend')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.trend
                   ? 'icon-compress-alt'
                   : 'icon-expand-alt',
               ]"
@@ -345,12 +345,12 @@ export default {
     height: 100%;
     width: 27.6%;
     #left-top {
-      height: 53%;
+      height: 45%;
+      margin-top: 25px;
       position: relative;
     }
     #left-bottom {
-      height: 31%;
-      margin-top: 25px;
+      height: 39%;
       position: relative;
     }
   }

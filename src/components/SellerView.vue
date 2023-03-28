@@ -51,7 +51,7 @@ export default {
       // 对图表初始化配置的控制
       const initOption = {
         title: {
-          text: "▎商家销售统计",
+          text: "▎故障预警统计",
           left: 20,
           top: 20,
         },
